@@ -1,0 +1,79 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #c6fd10;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+            background:conic-gradient(from 45deg,red,yellow,cyan,blue,red);
+        }        
+        .clock {
+            width: 500px;
+            height: 500px;
+            border: 5px solid rgb(43, 226, 83);
+            position: relative;
+            background:radial-gradient(circle, rgb(4, 177, 215), rgb(233, 4, 149));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 9em rgb(11, 239, 121);
+        }
+        .number {
+            transform: rotate(calc(30deg*var(--n)));
+            position: absolute;
+            text-align: center;
+            inset: 20px;
+            font-size: 40px;
+        }
+        
+        .number b {
+            transform: rotate(calc(-30deg*var(--n)));
+            display: inline-block;
+        }
+        
+        .center-dot {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: rgb(253, 245, 245);
+            border-radius: 50%;
+        }
+        
+        .hour-hand,
+        .minute-hand,
+        .second-hand {
+            position: absolute;
+            left: 50%;
+            bottom: 50%;
+            transform: translate(-50%) rotate(calc(var(--rotate)*1deg));
+            transform-origin: bottom;
+        }
+        
+        .hour-hand {
+            width: 12px;
+            height: 130px;
+            border-radius: 100%;
+            background-color: black;
+        }
+        
+        .minute-hand {
+            width: 12px;
+            height: 190px;
+            border-radius: 100%;
+            background-color: blue;
+        }
+        
+        .second-hand {
+            width: 6px;
+            height: 210px;
+            border-radius: 100%;
+            background-color: red;
+        }
